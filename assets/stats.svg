@@ -31,15 +31,16 @@
 
   <text class="mono" x="36" y="34" font-size="9.5" letter-spacing="2.2" fill="#86A6AA">STATS · 公开数据</text>
   <path d="M36 50 H864" stroke="#7BE3D2" stroke-width="0.8" opacity="0.18"/>
-  <text class="mono" x="36" y="96" font-size="34" fill="#ECF7F4">12</text><text class="zh" x="36" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">近一年贡献</text><text class="mono" x="36" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">公开贡献图</text>
+  <text class="mono" x="36" y="96" font-size="34" fill="#ECF7F4">13</text><text class="zh" x="36" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">近一年贡献</text><text class="mono" x="36" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">公开贡献图</text>
   <text class="mono" x="192" y="96" font-size="34" fill="#ECF7F4">6</text><text class="zh" x="192" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">活跃天数</text><text class="mono" x="192" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">有贡献的天</text>
   <text class="mono" x="348" y="96" font-size="34" fill="#ECF7F4">1</text><text class="zh" x="348" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">最长连续</text><text class="mono" x="348" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">连续天数</text>
   <text class="mono" x="504" y="96" font-size="34" fill="#ECF7F4">3</text><text class="zh" x="504" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">公开仓库</text><text class="mono" x="504" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">不含 fork</text>
   <path d="M596 66 V150" stroke="#7BE3D2" stroke-width="0.8" opacity="0.16"/>
   <text class="mono" x="628" y="76" font-size="9" letter-spacing="1.6" fill="#86A6AA" opacity="0.8">主力语言 · 公开仓库</text>
-  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">HTML</text><rect x="704" y="90" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="90" width="75.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="95" font-size="9" fill="#86A6AA" text-anchor="end">50%</text>
-  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">TypeScript</text><rect x="704" y="116" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="116" width="75.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="121" font-size="9" fill="#86A6AA" text-anchor="end">50%</text>
+  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">Python</text><rect x="704" y="90" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="90" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="95" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
+  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">HTML</text><rect x="704" y="116" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="116" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="121" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
+  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">TypeScript</text><rect x="704" y="142" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="142" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="147" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
   <text class="mono" x="36" y="190" font-size="8.5" letter-spacing="1" fill="#86A6AA" opacity="0.6">
-    来源：GitHub 公开贡献图与公开仓库列表 · 每日自动更新，不含私有数据
+    来源：GitHub 公开贡献图与公开仓库列表 · 不含私有数据
   </text>
 </svg>

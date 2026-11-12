@@ -286,7 +286,7 @@ def stats_svg(data, p):
   <text class="mono" x="628" y="76" font-size="9" letter-spacing="1.6" fill="{dim}" opacity="0.8">主力语言 · 公开仓库</text>
   {bars}
   <text class="mono" x="36" y="190" font-size="8.5" letter-spacing="1" fill="{dim}" opacity="0.6">
-    来源：GitHub 公开贡献图与公开仓库列表 · 每日自动更新，不含私有数据
+    来源：GitHub 公开贡献图与公开仓库列表 · 不含私有数据
   </text>
 </svg>
 """.format(bg1=p["bg1"], bg2=p["bg2"], bg3=p["bg3"], glow=p["glow"], glow_op=p["glow_op"],
