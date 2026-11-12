@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  「观澜」常驻个人主页横幅 · 暖白纸感 · 墨线
+  常驻个人主页横幅 · 暖白纸感 · 墨线
   ····························································
   设计意图：
-    · 一条持续走动的心跳线（服务器心率）横贯画面底部；
-      一串端点沿对角线排开，被依次点亮 —— 这是轮询巡检的节奏，不指向任何日期。
-    · 右上角是一枚扫描表盘：刻度环、缓慢转动的量程弧、中心「观澜」二字，
-      代表那块一直在看的监控面板。
+    · 一条持续走动的心跳线横贯画面底部：仪表感，不指向任何具体系统。
+    · 一条虚线把五个节点串起来，自左下向右上依次点亮，像信号在链路上推进。
+    · 右上角是一枚仪表盘：刻度环、缓慢转动的量程弧、中心一对花括号，
+      是代码的记号，也是这块画面上唯一的名字。
     · 全部为纯手写 SVG + 内嵌 CSS 动画，不引用任何外部图片 / 字体 / 统计接口，
       因此在 GitHub README 中以 <img> 方式加载也能正常动起来。
     · 加了 @media (prefers-reduced-motion: reduce)，系统开启「减少动态效果」时全部静止。
@@ -17,9 +17,9 @@
     · 文案：在文件末尾「⑦ 文案」分组里，直接改 <text> 即可。
     · 节奏：动效时长在 <style> 里的 animation 中，把秒数调大就更慢、更克制。
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" role="img" aria-label="观澜 · 暖白纸感 · 墨线 · 自托管监控">
-  <title>观澜 · 自托管监控</title>
-  <desc>个人主页横幅：心跳波形、巡检节点与扫描表盘，纯 SVG 动效。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" role="img" aria-label="yabingwang · 个人主页横幅 · 暖白纸感 · 墨线">
+  <title>yabingwang · 个人主页横幅</title>
+  <desc>心跳波形、链路节点与仪表盘，纯 SVG 动效。</desc>
 
   <defs>
     <!-- 背景渐变 -->
@@ -35,7 +35,7 @@
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- 点阵栅格：像监控面板的底图 -->
+    <!-- 点阵栅格：像仪器面板的底图 -->
     <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#8A8175"/>
     </pattern>
@@ -62,7 +62,6 @@
       /* 文案字体：优先系统中文字体，保证 GitHub 上各平台都能正常显示 */
       .zh { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif; }
       .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace; }
-      .mark-zh { font-family: 'Songti SC','STSong','SimSun',serif; }
 
       /* 心跳线：整条路径向左平移一个周期（300px），无限循环，视觉上永不停顿 */
       .wave { animation: drift 12s linear infinite; }
@@ -172,7 +171,7 @@
       </g>
     </g>
 
-    <!-- ④ 巡检链路：虚线连接五个端点，端点自左下向右上依次点亮 -->
+    <!-- ④ 链路：虚线串起五个节点，自左下向右上依次点亮 -->
     <path d="M556 216 L752 144" fill="none" stroke="#8E8880" stroke-width="1"
           stroke-opacity="0.45" stroke-dasharray="3 6" stroke-linecap="round"/>
     <g class="node" transform="translate(556 216)" style="--d:0.00s">
@@ -196,35 +195,29 @@
       <circle class="n-core" r="3" fill="{accent}"/>
     </g>
 
-    <!-- ⑤ 扫描表盘：刻度环 + 量程弧 + 中心「观澜」 -->
+    <!-- ⑤ 仪表盘：刻度环 + 量程弧 + 中心花括号 -->
     <g transform="translate(806 96)">
       <circle class="dial-ring" r="47" fill="none" stroke="#36666A" stroke-width="1"
               stroke-dasharray="1.6 5.4" opacity="0.55"/>
       <circle r="36" fill="none" stroke="#36666A" stroke-width="0.8" opacity="0.35"/>
       <circle class="dial-sweep" r="36" fill="none" stroke="#36666A" stroke-width="2"
               stroke-dasharray="44 182" stroke-linecap="round" opacity="0.9"/>
-      <text class="mark-zh" x="0" y="-5" text-anchor="middle" font-size="18"
-            fill="#36666A">观</text>
-      <text class="mark-zh" x="0" y="19" text-anchor="middle" font-size="18"
-            fill="#36666A">澜</text>
+      <text class="mono" x="0" y="6" text-anchor="middle" font-size="16"
+            letter-spacing="1.5" fill="#36666A">{ }</text>
     </g>
 
     <!-- ⑥ 文案 -->
-    <text class="mono" x="64" y="82" font-size="11" letter-spacing="3"
-          fill="#7A7266">OBSERVABILITY · SELF-HOSTED · HK</text>
-    <text class="zh" x="64" y="152" font-size="36" font-weight="600" letter-spacing="1.2"
-          fill="#23282A">白天写业务，夜里看曲线</text>
+    <text class="zh" x="64" y="152" font-size="38" font-weight="600" letter-spacing="1.2"
+          fill="#23282A">代码要经得起第二年</text>
 
     <!-- 状态灯 + 身份行 -->
     <g transform="translate(69 179)">
       <circle class="dot-ring" r="4.5" fill="none" stroke="#36666A" stroke-width="1.2"/>
       <circle class="dot-core" r="3.4" fill="#36666A"/>
     </g>
-    <text class="zh" x="86" y="184" font-size="13.5" letter-spacing="0.6" fill="#7A7266">yabingwang — 观澜，自托管监控面板</text>
+    <text class="zh" x="86" y="184" font-size="13.5" letter-spacing="0.6" fill="#7A7266">yabingwang — 写后端，在意可读性</text>
 
     <!-- ⑦ 边缘小字 -->
-    <text class="mono" x="64" y="270" font-size="9.5" letter-spacing="1.8"
-          fill="#7A7266" opacity="0.45">22.3193° N · 114.1694° E</text>
     <text class="mono" x="836" y="270" font-size="9.5" letter-spacing="1.4"
           fill="#7A7266" opacity="0.45" text-anchor="end">github.com/yabingwang</text>
   </g>
