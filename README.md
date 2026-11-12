@@ -1,8 +1,8 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-deep.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-paper.svg?v=3">
-    <img src="assets/banner-deep.svg?v=3" alt="代码要经得起换人" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-deep.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-paper.svg?v=4">
+    <img src="assets/banner-deep.svg?v=4" alt="安之若素，冷暖自知" width="900">
   </picture>
 </div>
 
@@ -18,21 +18,21 @@
 
 抽象等到第三次重复再提，前两次宁可复制一遍。
 
-信条就免了——代码要经得起换人。
+信条就免了——安之若素，冷暖自知。
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/stats.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg?v=3">
-    <img src="assets/stats.svg?v=3" alt="公开代码统计：活跃天数与主力语言" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg?v=4">
+    <img src="assets/stats.svg?v=4" alt="公开代码统计：活跃天数与主力语言" width="900">
   </picture>
 </div>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-deep.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/divider-paper.svg?v=3">
-    <img src="assets/divider-deep.svg?v=3" alt="" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-deep.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/divider-paper.svg?v=4">
+    <img src="assets/divider-deep.svg?v=4" alt="" width="900">
   </picture>
 </div>
 
@@ -48,19 +48,19 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-deep.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/divider-paper.svg?v=3">
-    <img src="assets/divider-deep.svg?v=3" alt="" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/divider-deep.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/divider-paper.svg?v=4">
+    <img src="assets/divider-deep.svg?v=4" alt="" width="900">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/marquee-deep.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/marquee-paper.svg?v=3">
-    <img src="assets/marquee-deep.svg?v=3" alt="关注方向：边界、可读性、命名、状态、错误处理、简单、长期维护、分寸" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/marquee-deep.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/marquee-paper.svg?v=4">
+    <img src="assets/marquee-deep.svg?v=4" alt="关注方向：边界、可读性、命名、状态、错误处理、简单、长期维护、分寸" width="900">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/status-deep.svg?v=3">
-    <source media="(prefers-color-scheme: light)" srcset="assets/status-paper.svg?v=3">
-    <img src="assets/status-deep.svg?v=3" alt="此刻：正在写代码" width="360">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/status-deep.svg?v=4">
+    <source media="(prefers-color-scheme: light)" srcset="assets/status-paper.svg?v=4">
+    <img src="assets/status-deep.svg?v=4" alt="此刻：正在写代码" width="360">
   </picture>
 </div>
 

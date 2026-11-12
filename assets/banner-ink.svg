@@ -222,7 +222,7 @@
 
     <!-- ⑦ 文案 -->
     <text class="zh" x="64" y="152" font-size="42" font-weight="600" letter-spacing="1.2"
-          fill="#E9F2F5">代码要经得起换人</text>
+          fill="#E9F2F5">安之若素，冷暖自知</text>
     <g transform="translate(69 179)">
       <circle class="dot-ring" r="4.5" fill="none" stroke="#00F0D0" stroke-width="1.2"/>
       <circle class="dot-core" r="3.4" fill="#00F0D0"/>
