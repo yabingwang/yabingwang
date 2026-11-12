@@ -132,35 +132,35 @@
     <rect width="900" height="280" filter="url(#grain)" opacity="0.07"/>
 
     <!-- ② 顶部刻度轴 -->
-    <path d="M64 40 H836" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M64 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M92 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M120 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M148 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M176 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M204 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M232 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M260 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M288 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M316 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M344 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M372 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M400 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M428 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M456 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M484 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M512 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M540 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M568 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M596 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M624 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M652 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M680 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M708 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M736 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M764 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M792 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
-    <path d="M820 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M64 40 H836" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M64 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M92 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M120 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M148 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M176 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M204 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M232 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M260 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M288 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M316 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M344 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M372 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M400 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M428 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M456 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M484 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M512 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M540 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M568 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M596 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M624 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M652 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M680 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M708 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M736 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M764 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M792 40 V43" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
+    <path d="M820 40 V46" stroke="#8A8175" stroke-width="0.8" opacity="0.28"/>
 
     <!-- ③ 扫描带（在栅格之上、文字之下，只提亮底图） -->
     <g class="scan">
@@ -190,24 +190,24 @@
     <path class="flow" d="M556 216 L752 144" fill="none" stroke="#36666A" stroke-width="1.8"
           stroke-linecap="round" stroke-dasharray="10 242" pathLength="252"/>
     <g class="node" transform="translate(556 216)" style="--d:0.00s">
-      <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
-      <circle class="n-core" r="3" fill="{accent}"/>
+      <circle class="n-halo" r="8" fill="none" stroke="#36666A" stroke-width="1"/>
+      <circle class="n-core" r="3" fill="#36666A"/>
     </g>
     <g class="node" transform="translate(605 198)" style="--d:0.45s">
-      <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
-      <circle class="n-core" r="3" fill="{accent}"/>
+      <circle class="n-halo" r="8" fill="none" stroke="#36666A" stroke-width="1"/>
+      <circle class="n-core" r="3" fill="#36666A"/>
     </g>
     <g class="node" transform="translate(654 180)" style="--d:0.90s">
-      <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
-      <circle class="n-core" r="3" fill="{accent}"/>
+      <circle class="n-halo" r="8" fill="none" stroke="#36666A" stroke-width="1"/>
+      <circle class="n-core" r="3" fill="#36666A"/>
     </g>
     <g class="node" transform="translate(703 162)" style="--d:1.35s">
-      <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
-      <circle class="n-core" r="3" fill="{accent}"/>
+      <circle class="n-halo" r="8" fill="none" stroke="#36666A" stroke-width="1"/>
+      <circle class="n-core" r="3" fill="#36666A"/>
     </g>
     <g class="node" transform="translate(752 144)" style="--d:1.80s">
-      <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
-      <circle class="n-core" r="3" fill="{accent}"/>
+      <circle class="n-halo" r="8" fill="none" stroke="#36666A" stroke-width="1"/>
+      <circle class="n-core" r="3" fill="#36666A"/>
     </g>
 
     <!-- ⑥ 仪表盘：刻度环 + 量程弧 + 花括号 -->
@@ -222,8 +222,8 @@
     </g>
 
     <!-- ⑦ 文案 -->
-    <text class="zh" x="64" y="152" font-size="38" font-weight="600" letter-spacing="1.2"
-          fill="#23282A">代码要经得起第二年</text>
+    <text class="zh" x="64" y="152" font-size="42" font-weight="600" letter-spacing="1.2"
+          fill="#23282A">代码要经得起换人</text>
     <g transform="translate(69 179)">
       <circle class="dot-ring" r="4.5" fill="none" stroke="#36666A" stroke-width="1.2"/>
       <circle class="dot-core" r="3.4" fill="#36666A"/>

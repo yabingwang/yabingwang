@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   公开代码统计（自动生成，请勿手改）
-  来源：GitHub 公开贡献图 + 公开仓库列表。只统计公开数据，不含私有仓库。
+  只展示两项：近一年活跃天数、公开仓库的主力语言占比。
+  来源：GitHub 公开活动记录与公开仓库列表，不含私有数据。
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="900" height="210"
-     role="img" aria-label="公开代码统计">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 190" width="900" height="190"
+     role="img" aria-label="公开代码统计：活跃天数与主力语言">
   <title>公开代码统计</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0.8" y2="1">
@@ -24,23 +25,25 @@
     </style>
   </defs>
 
-  <rect width="900" height="210" rx="14" fill="url(#bg)"/>
-  <rect width="900" height="210" rx="14" fill="url(#glow)"/>
-  <rect width="900" height="210" rx="14" fill="url(#grid)" opacity="0.10"/>
-  <rect x="0.5" y="0.5" width="899" height="209" rx="14" fill="none" stroke="#7BE3D2" stroke-opacity="0.16"/>
+  <rect width="900" height="190" rx="14" fill="url(#bg)"/>
+  <rect width="900" height="190" rx="14" fill="url(#glow)"/>
+  <rect width="900" height="190" rx="14" fill="url(#grid)" opacity="0.10"/>
+  <rect x="0.5" y="0.5" width="899" height="189" rx="14" fill="none" stroke="#7BE3D2" stroke-opacity="0.16"/>
 
-  <text class="mono" x="36" y="34" font-size="9.5" letter-spacing="2.2" fill="#86A6AA">STATS · 公开数据</text>
-  <path d="M36 50 H864" stroke="#7BE3D2" stroke-width="0.8" opacity="0.18"/>
-  <text class="mono" x="36" y="96" font-size="34" fill="#ECF7F4">13</text><text class="zh" x="36" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">近一年贡献</text><text class="mono" x="36" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">公开贡献图</text>
-  <text class="mono" x="192" y="96" font-size="34" fill="#ECF7F4">6</text><text class="zh" x="192" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">活跃天数</text><text class="mono" x="192" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">有贡献的天</text>
-  <text class="mono" x="348" y="96" font-size="34" fill="#ECF7F4">1</text><text class="zh" x="348" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">最长连续</text><text class="mono" x="348" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">连续天数</text>
-  <text class="mono" x="504" y="96" font-size="34" fill="#ECF7F4">3</text><text class="zh" x="504" y="120" font-size="11" letter-spacing="0.6" fill="#ECF7F4">公开仓库</text><text class="mono" x="504" y="136" font-size="8.5" letter-spacing="0.8" fill="#86A6AA" opacity="0.55">不含 fork</text>
-  <path d="M596 66 V150" stroke="#7BE3D2" stroke-width="0.8" opacity="0.16"/>
-  <text class="mono" x="628" y="76" font-size="9" letter-spacing="1.6" fill="#86A6AA" opacity="0.8">主力语言 · 公开仓库</text>
-  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">Python</text><rect x="704" y="90" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="90" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="95" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
-  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">HTML</text><rect x="704" y="116" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="116" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="121" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
-  <text class="mono" x="628" y="628" font-size="10" fill="#ECF7F4">TypeScript</text><rect x="704" y="142" width="150" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.14"/><rect x="704" y="142" width="50.0" height="4" rx="2" fill="#7BE3D2" fill-opacity="0.85"/><text class="mono" x="874" y="147" font-size="9" fill="#86A6AA" text-anchor="end">33%</text>
-  <text class="mono" x="36" y="190" font-size="8.5" letter-spacing="1" fill="#86A6AA" opacity="0.6">
-    来源：GitHub 公开贡献图与公开仓库列表 · 不含私有数据
+  <text class="mono" x="36" y="36" font-size="9.5" letter-spacing="2.2" fill="#86A6AA">STATS · 公开数据</text>
+  <path d="M36 52 H864" stroke="#7BE3D2" stroke-width="0.8" opacity="0.18"/>
+
+  <text class="mono" x="36" y="112" font-size="52" fill="#ECF7F4">6</text>
+  <text class="zh" x="36" y="140" font-size="12" letter-spacing="0.8" fill="#ECF7F4">活跃天数</text>
+  <text class="mono" x="36" y="160" font-size="9" letter-spacing="0.8" fill="#86A6AA" opacity="0.6">过去 365 天中有记录的天数</text>
+
+  <path d="M456 72 V158" stroke="#7BE3D2" stroke-width="0.8" opacity="0.16"/>
+  <text class="mono" x="512" y="76" font-size="9" letter-spacing="1.8" fill="#86A6AA">主力语言 · 公开仓库</text>
+  <text class="mono" x="512" y="512" font-size="11.5" fill="#ECF7F4">Python</text><rect x="588" y="97" width="240" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.14"/><rect x="588" y="97" width="80.0" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.9"/><text class="mono" x="864" y="104" font-size="10" fill="#86A6AA" text-anchor="end">33%</text>
+  <text class="mono" x="512" y="512" font-size="11.5" fill="#ECF7F4">HTML</text><rect x="588" y="127" width="240" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.14"/><rect x="588" y="127" width="80.0" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.9"/><text class="mono" x="864" y="134" font-size="10" fill="#86A6AA" text-anchor="end">33%</text>
+  <text class="mono" x="512" y="512" font-size="11.5" fill="#ECF7F4">TypeScript</text><rect x="588" y="157" width="240" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.14"/><rect x="588" y="157" width="80.0" height="5" rx="2.5" fill="#7BE3D2" fill-opacity="0.9"/><text class="mono" x="864" y="164" font-size="10" fill="#86A6AA" text-anchor="end">33%</text>
+
+  <text class="mono" x="36" y="178" font-size="8.5" letter-spacing="1" fill="#86A6AA" opacity="0.5">
+    来源：GitHub 公开活动记录与公开仓库列表 · 不含私有数据
   </text>
 </svg>

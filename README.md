@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/banner-deep.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/banner-paper.svg">
-    <img src="assets/banner-deep.svg" alt="代码要经得起第二年" width="900">
+    <img src="assets/banner-deep.svg" alt="代码要经得起换人" width="900">
   </picture>
 </div>
 
@@ -10,18 +10,23 @@
 
 一个程序员。
 
-日常是把需求拆小、把边界划清、把状态想全；剩下的时间用来把已经写对的东西写清楚。
+需求先拆到能一次说清的一块，说不清就先问，不先动手。
+
+边界画在能单独验证的地方；要跨过去，必须显式。
+
+出错让它响，允许降级，但要留下能复现的那几个字段。
+
+抽象等到第三次重复再提，前两次宁可复制一遍。
+
+命名按它实际做的事写，不按我当时的想法写。
+
+长期只做一件事：让这套代码换个人接手，也改得动。
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stats.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
-    <img src="assets/stats.svg" alt="公开代码统计：近一年贡献、活跃天数、最长连续、公开仓库与主力语言" width="900">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/heatmap-light.svg">
-    <img src="assets/heatmap.svg" alt="近一年公开贡献热力格" width="900">
+    <img src="assets/stats.svg" alt="公开代码统计：活跃天数与主力语言" width="900">
   </picture>
 </div>
 

@@ -17,38 +17,38 @@
   </defs>
   <g clip-path="url(#c)">
     <g class="track zh">
-      <path d="M0 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="14" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">边界</text>
-      <path d="M112 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="126" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">可读性</text>
-      <path d="M224 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="238" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">命名</text>
-      <path d="M336 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="350" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">状态</text>
-      <path d="M448 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="462" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">错误处理</text>
-      <path d="M560 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="574" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">简单</text>
-      <path d="M672 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="686" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">长期维护</text>
-      <path d="M784 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="798" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">分寸</text>
-      <path d="M896 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="910" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">边界</text>
-      <path d="M1008 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1022" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">可读性</text>
-      <path d="M1120 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1134" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">命名</text>
-      <path d="M1232 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1246" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">状态</text>
-      <path d="M1344 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1358" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">错误处理</text>
-      <path d="M1456 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1470" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">简单</text>
-      <path d="M1568 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1582" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">长期维护</text>
-      <path d="M1680 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
-      <text x="1694" y="26" font-size="13.5" letter-spacing="2" fill="{accent}" fill-opacity="0.92">分寸</text>
+      <path d="M0 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="14" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">边界</text>
+      <path d="M112 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="126" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">可读性</text>
+      <path d="M224 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="238" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">命名</text>
+      <path d="M336 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="350" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">状态</text>
+      <path d="M448 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="462" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">错误处理</text>
+      <path d="M560 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="574" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">简单</text>
+      <path d="M672 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="686" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">长期维护</text>
+      <path d="M784 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="798" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">分寸</text>
+      <path d="M896 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="910" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">边界</text>
+      <path d="M1008 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1022" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">可读性</text>
+      <path d="M1120 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1134" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">命名</text>
+      <path d="M1232 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1246" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">状态</text>
+      <path d="M1344 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1358" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">错误处理</text>
+      <path d="M1456 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1470" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">简单</text>
+      <path d="M1568 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1582" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">长期维护</text>
+      <path d="M1680 14 V26" stroke="#36666A" stroke-width="1" opacity="0.42"/>
+      <text x="1694" y="26" font-size="13.5" letter-spacing="2" fill="#36666A" fill-opacity="0.95">分寸</text>
     </g>
   </g>
 </svg>

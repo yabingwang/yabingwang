@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""生成 stats.svg / heatmap.svg（以及浅色主题副本）。
+"""生成 stats.svg（以及浅色主题副本）。
 
 数据全部来自公开信息：
-  · GraphQL contributionsCollection —— 近一年的公开贡献图（贡献格 / 贡献总数）
-  · REST /users/{login} 与 /users/{login}/repos —— 公开仓库数、各仓库主语言
+  · GraphQL contributionsCollection —— 近一年的公开活动日历（用来数活跃天数）
+  · REST /users/{login}/repos —— 公开仓库的主语言分布
 不触碰任何私有数据，页面上标注的也是这两个来源。
 
 失败处理：所有网络请求先完成，渲染结果先放在内存里；任何一步抛错则
@@ -109,22 +109,16 @@ def fetch(login, token):
                 public_repos=len(owned), repos=owned)
 
 
-def metrics(days, total, repos, public_repos):
+def metrics(days, repos):
     counts = [d["contributionCount"] for d in days]
     active = sum(1 for c in counts if c > 0)
-    best = cur = 0
-    for c in counts:
-        cur = cur + 1 if c > 0 else 0
-        best = max(best, cur)
     langs = {}
     for r in repos:
         if r.get("language"):
             langs[r["language"]] = langs.get(r["language"], 0) + 1
     top = sorted(langs.items(), key=lambda kv: -kv[1])[:3]
     denom = sum(langs.values()) or 1
-    return dict(total=total, active=active, streak=best, repos=public_repos,
-                langs=[(n, c, c * 100.0 / denom) for n, c in top],
-                max=max(counts + [1]))
+    return dict(active=active, langs=[(n, c, c * 100.0 / denom) for n, c in top])
 
 
 def cell_color(p, level):
@@ -223,38 +217,26 @@ def heatmap_svg(data, p):
 
 def stats_svg(data, p):
     m = data["m"]
-    items = [("近一年贡献", str(m["total"]), "公开贡献图"),
-             ("活跃天数", str(m["active"]), "有贡献的天"),
-             ("最长连续", str(m["streak"]), "连续天数"),
-             ("公开仓库", str(m["repos"]), "不含 fork")]
-    blocks = []
-    for i, (label, value, note) in enumerate(items):
-        x = 36 + i * 156
-        blocks.append(
-            '<text class="mono" x="%d" y="96" font-size="34" fill="%s">%s</text>'
-            '<text class="zh" x="%d" y="120" font-size="11" letter-spacing="0.6" fill="%s">%s</text>'
-            '<text class="mono" x="%d" y="136" font-size="8.5" letter-spacing="0.8" fill="%s" opacity="0.55">%s</text>'
-            % (x, p["text"], value, x, p["text"], label, x, p["dim"], note))
-
     bars = []
     maxpct = max([x[2] for x in m["langs"]] + [1])
     for i, (name, cnt, pct) in enumerate(m["langs"]):
-        yc = 92 + i * 26
-        w = 150 * pct / 100.0
+        yc = 100 + i * 30
+        w = 240 * pct / 100.0
         bars.append(
-            '<text class="mono" x="628" y="%d" font-size="10" fill="%s">%s</text>'
-            '<rect x="704" y="%d" width="150" height="4" rx="2" fill="%s" fill-opacity="0.14"/>'
-            '<rect x="704" y="%d" width="%.1f" height="4" rx="2" fill="%s" fill-opacity="0.85"/>'
-            '<text class="mono" x="874" y="%d" font-size="9" fill="%s" text-anchor="end">%d%%</text>'
-            % (628, p["text"], name, yc - 2, p["accent"], yc - 2, w, p["accent"], yc + 3, p["dim"], round(pct)))
+            '<text class="mono" x="512" y="%d" font-size="11.5" fill="%s">%s</text>'
+            '<rect x="588" y="%d" width="240" height="5" rx="2.5" fill="%s" fill-opacity="0.14"/>'
+            '<rect x="588" y="%d" width="%.1f" height="5" rx="2.5" fill="%s" fill-opacity="0.9"/>'
+            '<text class="mono" x="864" y="%d" font-size="10" fill="%s" text-anchor="end">%d%%</text>'
+            % (512, p["text"], name, yc - 3, p["accent"], yc - 3, w, p["accent"], yc + 4, p["dim"], round(pct)))
 
     return """<?xml version="1.0" encoding="UTF-8"?>
 <!--
   公开代码统计（自动生成，请勿手改）
-  来源：GitHub 公开贡献图 + 公开仓库列表。只统计公开数据，不含私有仓库。
+  只展示两项：近一年活跃天数、公开仓库的主力语言占比。
+  来源：GitHub 公开活动记录与公开仓库列表，不含私有数据。
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="900" height="210"
-     role="img" aria-label="公开代码统计">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 190" width="900" height="190"
+     role="img" aria-label="公开代码统计：活跃天数与主力语言">
   <title>公开代码统计</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0.8" y2="1">
@@ -274,24 +256,29 @@ def stats_svg(data, p):
     </style>
   </defs>
 
-  <rect width="900" height="210" rx="14" fill="url(#bg)"/>
-  <rect width="900" height="210" rx="14" fill="url(#glow)"/>
-  <rect width="900" height="210" rx="14" fill="url(#grid)" opacity="{grid_op}"/>
-  <rect x="0.5" y="0.5" width="899" height="209" rx="14" fill="none" stroke="{accent}" stroke-opacity="0.16"/>
+  <rect width="900" height="190" rx="14" fill="url(#bg)"/>
+  <rect width="900" height="190" rx="14" fill="url(#glow)"/>
+  <rect width="900" height="190" rx="14" fill="url(#grid)" opacity="{grid_op}"/>
+  <rect x="0.5" y="0.5" width="899" height="189" rx="14" fill="none" stroke="{accent}" stroke-opacity="0.16"/>
 
-  <text class="mono" x="36" y="34" font-size="9.5" letter-spacing="2.2" fill="{dim}">STATS · 公开数据</text>
-  <path d="M36 50 H864" stroke="{accent}" stroke-width="0.8" opacity="0.18"/>
-  {blocks}
-  <path d="M596 66 V150" stroke="{accent}" stroke-width="0.8" opacity="0.16"/>
-  <text class="mono" x="628" y="76" font-size="9" letter-spacing="1.6" fill="{dim}" opacity="0.8">主力语言 · 公开仓库</text>
+  <text class="mono" x="36" y="36" font-size="9.5" letter-spacing="2.2" fill="{dim}">STATS · 公开数据</text>
+  <path d="M36 52 H864" stroke="{accent}" stroke-width="0.8" opacity="0.18"/>
+
+  <text class="mono" x="36" y="112" font-size="52" fill="{text}">{active}</text>
+  <text class="zh" x="36" y="140" font-size="12" letter-spacing="0.8" fill="{text}">活跃天数</text>
+  <text class="mono" x="36" y="160" font-size="9" letter-spacing="0.8" fill="{dim}" opacity="0.6">过去 365 天中有记录的天数</text>
+
+  <path d="M456 72 V158" stroke="{accent}" stroke-width="0.8" opacity="0.16"/>
+  <text class="mono" x="512" y="76" font-size="9" letter-spacing="1.8" fill="{dim}">主力语言 · 公开仓库</text>
   {bars}
-  <text class="mono" x="36" y="190" font-size="8.5" letter-spacing="1" fill="{dim}" opacity="0.6">
-    来源：GitHub 公开贡献图与公开仓库列表 · 不含私有数据
+
+  <text class="mono" x="36" y="178" font-size="8.5" letter-spacing="1" fill="{dim}" opacity="0.5">
+    来源：GitHub 公开活动记录与公开仓库列表 · 不含私有数据
   </text>
 </svg>
 """.format(bg1=p["bg1"], bg2=p["bg2"], bg3=p["bg3"], glow=p["glow"], glow_op=p["glow_op"],
            grid=p["grid"], grid_op=p["grid_op"], accent=p["accent"], text=p["text"], dim=p["dim"],
-           blocks="\n  ".join(blocks), bars="\n  ".join(bars))
+           active=m["active"], bars="\n  ".join(bars))
 
 
 def main():
@@ -306,17 +293,15 @@ def main():
     # 先取数：任何异常都在写文件之前抛出，旧图保持不动
     try:
         raw = fetch(args.login, token)
-        m = metrics(raw["days"], raw["total"], raw["repos"], raw["public_repos"])
+        m = metrics(raw["days"], raw["repos"])
     except Exception as e:  # noqa: BLE001
         print("拉取数据失败，保留上一次的 SVG：%r" % (e,), file=sys.stderr)
         return 1
 
-    data = dict(days=raw["days"], total=raw["total"], m=m)
+    data = dict(m=m)
     outputs = {
         "stats.svg": stats_svg(data, PALETTES["deep"]),
         "stats-light.svg": stats_svg(data, PALETTES["paper"]),
-        "heatmap.svg": heatmap_svg(data, PALETTES["deep"]),
-        "heatmap-light.svg": heatmap_svg(data, PALETTES["paper"]),
     }
     for name, content in outputs.items():
         tmp = os.path.join(ASSETS, name + ".tmp")
@@ -324,9 +309,8 @@ def main():
             f.write(content)
         os.replace(tmp, os.path.join(ASSETS, name))
 
-    print("贡献 %d · 活跃 %d 天 · 最长连续 %d 天 · 公开仓库 %d"
-          % (m["total"], m["active"], m["streak"], m["repos"]))
-    print("主力语言：" + ", ".join("%s %d%%" % (n, round(pc)) for n, c, pc in m["langs"]))
+    print("活跃 %d 天 · 主力语言 %s"
+          % (m["active"], ", ".join("%s %d%%" % (n, round(pc)) for n, c, pc in m["langs"])))
     return 0
 
 
