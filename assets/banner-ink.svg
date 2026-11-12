@@ -1,160 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  常驻个人主页横幅 · 夜行墨黑 · 荧光青
-  ····························································
-  设计意图：
-    · 一条持续走动的心跳线横贯画面底部：仪表感，不指向任何具体系统。
-    · 一条虚线把五个节点串起来，自左下向右上依次点亮，像信号在链路上推进。
-    · 右上角是一枚仪表盘：刻度环、缓慢转动的量程弧、中心一对花括号，
-      是代码的记号，也是这块画面上唯一的名字。
-    · 全部为纯手写 SVG + 内嵌 CSS 动画，不引用任何外部图片 / 字体 / 统计接口，
-      因此在 GitHub README 中以 <img> 方式加载也能正常动起来。
-    · 加了 @media (prefers-reduced-motion: reduce)，系统开启「减少动态效果」时全部静止。
+  个人主页横幅 · 夜行墨黑
+  ································································
+  四层结构，每一层都在说「有东西在被持续看着」：
+    1) 点阵栅格 + 极淡横线 —— 面板底图，给画面纵深；
+    2) 扫描带 —— 自上而下缓慢掠过，经过时把栅格提亮一档；
+    3) 心跳线 —— 底部持续走动的一条脉搏，底层另有一条更慢的宽描边做视差；
+    4) 链路 —— 五个节点被虚线串起，一枚数据脉冲从起点跑到终点，
+       每到一个节点它亮一次（脉冲 1.8s 走完全程，节点间隔 0.45s，节奏严格对齐）。
+  右上角仪表盘：刻度环 60s 转一圈、量程弧 16s 扫一圈、中心一对花括号。
+  右下角终端光标呼吸；系统开启「减少动态效果」时全部静止。
 
-  改造指南：
-    · 配色：集中在 <defs> 的渐变（背景、柔光）和各元素的 fill / stroke 里，直接搜色值替换；
-      三套方案的完整色值对照表见仓库根目录 README.md。
-    · 文案：在文件末尾「⑦ 文案」分组里，直接改 <text> 即可。
-    · 节奏：动效时长在 <style> 里的 animation 中，把秒数调大就更慢、更克制。
+  改造指南：配色集中在 <defs> 渐变与各元素 fill / stroke；文案在「⑥ 文案」；
+  节奏在 <style> 的 animation 秒数里。
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" role="img" aria-label="yabingwang · 个人主页横幅 · 夜行墨黑 · 荧光青">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280"
+     role="img" aria-label="个人主页横幅 · 夜行墨黑">
   <title>yabingwang · 个人主页横幅</title>
-  <desc>心跳波形、链路节点与仪表盘，纯 SVG 动效。</desc>
+  <desc>扫描栅格、心跳线、数据链路与仪表盘，纯 SVG 动效。</desc>
 
   <defs>
-    <!-- 背景渐变 -->
     <linearGradient id="bg" x1="0" y1="0" x2="0.85" y2="1">
       <stop offset="0" stop-color="#05070A"/>
       <stop offset="0.62" stop-color="#070C10"/>
       <stop offset="1" stop-color="#0B1318"/>
     </linearGradient>
 
-    <!-- 左上角柔光，给平面一点纵深 -->
-    <radialGradient id="glow" cx="0.18" cy="0.12" r="0.75">
+    <radialGradient id="glow" cx="0.18" cy="0.12" r="0.78">
       <stop offset="0" stop-color="#00B39B" stop-opacity="0.13"/>
       <stop offset="1" stop-color="#00B39B" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- 点阵栅格：像仪器面板的底图 -->
+    <!-- 点阵栅格 -->
     <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="1" fill="#9AA7B0"/>
     </pattern>
 
-    <!-- 波形左右两端淡出，避免生硬截断 -->
+    <!-- 扫描带：上淡下亮，底边一道细线即扫描头 -->
+    <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00F0D0" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#00F0D0" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#00F0D0" stop-opacity="0.16"/>
+    </linearGradient>
+
+    <!-- 波形两端淡出 -->
     <linearGradient id="fadeX" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/>
       <stop offset="0.10" stop-color="#fff" stop-opacity="1"/>
       <stop offset="0.86" stop-color="#fff" stop-opacity="1"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
-    <mask id="fadeMask">
-      <rect width="900" height="280" fill="url(#fadeX)"/>
-    </mask>
-
+    <mask id="fadeMask"><rect width="900" height="280" fill="url(#fadeX)"/></mask>
     <clipPath id="frame"><rect width="900" height="280"/></clipPath>
 
-    <!-- 夜行：极淡扫描线，制造终端质感 -->
+    <!-- 极淡扫描线，终端质感 -->
     <pattern id="scan" width="900" height="4" patternUnits="userSpaceOnUse">
       <rect width="900" height="1" y="0" fill="#9AA7B0" opacity="0.05"/>
     </pattern>
     <style>
-      /* 文案字体：优先系统中文字体，保证 GitHub 上各平台都能正常显示 */
       .zh { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif; }
       .mono { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace; }
 
-      /* 心跳线：整条路径向左平移一个周期（300px），无限循环，视觉上永不停顿 */
+      /* 心跳线：向左平移一个周期后无缝接回 */
       .wave { animation: drift 7s linear infinite; }
       .wave-ghost { animation-duration: 12s; }
-      @keyframes drift {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-300px); }
+      @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-300px); } }
+
+      /* 扫描带：11 秒自上而下走一遍，把栅格「提亮一档」 */
+      .scan { animation: scan 11s linear infinite; }
+      @keyframes scan { from { transform: translateY(0); } to { transform: translateY(380px); } }
+
+      /* 数据脉冲：1.8s 跑完 252 单位链路，与节点依次点亮严格同步 */
+      .flow { animation: flow 5.5s linear infinite; }
+      @keyframes flow {
+        0%   { stroke-dashoffset: 252; }
+        32.7% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 0; }
       }
 
-      /* 巡检节点：沿链路依次点亮。延迟由父级 --d 传入，五个点等距错开 */
-      .n-core { opacity: 0.45; animation: node 5.5s linear infinite;
-                 animation-delay: var(--d); }
+      /* 节点：被脉冲扫到时亮起并扩散一圈 */
+      .n-core { opacity: 0.42; animation: node 5.5s linear infinite; animation-delay: var(--d); }
       .n-halo { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%;
                  animation: halo 5.5s ease-out infinite; animation-delay: var(--d); }
       @keyframes node {
-        0%   { opacity: 0.45; }
-        4%   { opacity: 1; }
-        16%  { opacity: 0.6; }
-        100% { opacity: 0.45; }
+        0% { opacity: 0.42; } 4% { opacity: 1; } 18% { opacity: 0.6; } 100% { opacity: 0.42; }
       }
       @keyframes halo {
-        0%   { opacity: 0; transform: scale(0.35); }
-        4%   { opacity: 0.8; }
-        18%  { opacity: 0; transform: scale(1.9); }
-        100% { opacity: 0; transform: scale(1.9); }
+        0% { opacity: 0; transform: scale(0.35); }
+        4% { opacity: 0.85; }
+        20% { opacity: 0; transform: scale(2); }
+        100% { opacity: 0; transform: scale(2); }
       }
 
-      /* 状态灯：核心明暗呼吸，外环周期性扩散 */
+      /* 仪表盘 */
+      .dial-ring { transform-box: fill-box; transform-origin: 50% 50%; animation: spin 60s linear infinite; }
+      .dial-sweep { transform-box: fill-box; transform-origin: 50% 50%; animation: spin 16s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      /* 状态灯 + 终端光标 */
       .dot-core { animation: breathe 2.6s ease-in-out infinite; }
       @keyframes breathe { 0%,100% { opacity: 1; } 50% { opacity: 0.42; } }
       .dot-ring { opacity: 0; transform-box: fill-box; transform-origin: 50% 50%;
                   animation: ping 2.6s ease-out infinite; }
       @keyframes ping {
-        0%   { transform: scale(0.5); opacity: 0.55; }
-        70%  { transform: scale(2.3); opacity: 0; }
+        0% { transform: scale(0.5); opacity: 0.55; }
+        70% { transform: scale(2.3); opacity: 0; }
         100% { opacity: 0; }
       }
+      .cursor { animation: blink 1.15s steps(1, end) infinite; }
+      @keyframes blink { 0%, 49% { opacity: 0.85; } 50%, 100% { opacity: 0; } }
 
-      /* 表盘：外圈刻度环极慢自转；量程弧匀速扫一圈 */
-      .dial-ring { transform-box: fill-box; transform-origin: 50% 50%;
-                   animation: spin 60s linear infinite; }
-      .dial-sweep { transform-box: fill-box; transform-origin: 50% 50%;
-                    animation: spin 16s linear infinite; }
-      @keyframes spin { to { transform: rotate(360deg); } }
-
-      /* 尊重系统「减少动态效果」：所有装饰性动画归零，只保留静态构图 */
       @media (prefers-reduced-motion: reduce) {
-        .wave, .wave-ghost, .n-core, .n-halo, .dot-core, .dot-ring,
-        .dial-ring, .dial-sweep {
-          animation: none !important;
-        }
+        .wave, .wave-ghost, .scan, .flow, .n-core, .n-halo,
+        .dot-core, .dot-ring, .dial-ring, .dial-sweep, .cursor { animation: none !important; }
+        .cursor { opacity: 0.85; }
       }
     </style>
   </defs>
 
   <g clip-path="url(#frame)">
-    <!-- ① 底色 + 柔光 + 点阵 -->
+    <!-- ① 底色、柔光、栅格与极淡横线 -->
     <rect width="900" height="280" fill="url(#bg)"/>
     <rect width="900" height="280" fill="url(#glow)"/>
-    <rect width="900" height="280" fill="url(#grid)" opacity="0.08"/>
+    <g opacity="0.08">
+      <rect width="900" height="280" fill="url(#grid)"/>
+      <g stroke="#9AA7B0" stroke-width="0.5">
+        <path d="M0 70 H900"/><path d="M0 140 H900"/><path d="M0 210 H900"/>
+      </g>
+    </g>
     <rect width="900" height="280" fill="url(#scan)"/>
 
-    <!-- ② 顶部时间轴刻度：给画面一条基准线 -->
-    <path d="M64 40 H836" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M64 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M92 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M120 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M148 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M176 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M204 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M232 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M260 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M288 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M316 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M344 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M372 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M400 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M428 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M456 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M484 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M512 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M540 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M568 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M596 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M624 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M652 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M680 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M708 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M736 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M764 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M792 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
-    <path d="M820 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.22"/>
+    <!-- ② 顶部刻度轴 -->
+    <path d="M64 40 H836" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M64 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M92 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M120 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M148 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M176 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M204 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M232 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M260 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M288 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M316 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M344 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M372 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M400 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M428 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M456 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M484 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M512 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M540 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M568 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M596 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M624 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M652 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M680 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M708 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M736 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M764 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M792 40 V43" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
+    <path d="M820 40 V46" stroke="{rule}" stroke-width="0.8" opacity="0.20"/>
 
-    <!-- ③ 心跳线（底层宽描边做微光，上层细线做主体，速度不同形成视差） -->
+    <!-- ③ 扫描带（在栅格之上、文字之下，只提亮底图） -->
+    <g class="scan">
+      <rect x="0" y="-90" width="900" height="90" fill="url(#scanG)"/>
+      <rect x="0" y="-1" width="900" height="1" fill="#00F0D0" opacity="0.22"/>
+    </g>
+
+    <!-- ④ 心跳线（宽描边微光 + 细线主体，速度不同形成视差） -->
     <g mask="url(#fadeMask)">
       <g transform="translate(0 236)">
         <g class="wave wave-ghost">
@@ -170,9 +183,11 @@
       </g>
     </g>
 
-    <!-- ④ 链路：虚线串起五个节点，自左下向右上依次点亮 -->
+    <!-- ⑤ 链路：虚线 + 流动的数据脉冲 + 五个节点 -->
     <path d="M556 216 L752 144" fill="none" stroke="#00A88F" stroke-width="1"
-          stroke-opacity="0.45" stroke-dasharray="3 6" stroke-linecap="round"/>
+          stroke-opacity="0.42" stroke-dasharray="3 6" stroke-linecap="round"/>
+    <path class="flow" d="M556 216 L752 144" fill="none" stroke="#00F0D0" stroke-width="1.8"
+          stroke-linecap="round" stroke-dasharray="10 242" pathLength="252"/>
     <g class="node" transform="translate(556 216)" style="--d:0.00s">
       <circle class="n-halo" r="8" fill="none" stroke="{accent}" stroke-width="1"/>
       <circle class="n-core" r="3" fill="{accent}"/>
@@ -194,29 +209,29 @@
       <circle class="n-core" r="3" fill="{accent}"/>
     </g>
 
-    <!-- ⑤ 仪表盘：刻度环 + 量程弧 + 中心花括号 -->
+    <!-- ⑥ 仪表盘：刻度环 + 量程弧 + 花括号 -->
     <g transform="translate(806 96)">
       <circle class="dial-ring" r="47" fill="none" stroke="#00F0D0" stroke-width="1"
               stroke-dasharray="1.6 5.4" opacity="0.55"/>
-      <circle r="36" fill="none" stroke="#00F0D0" stroke-width="0.8" opacity="0.35"/>
+      <circle r="36" fill="none" stroke="#00F0D0" stroke-width="0.8" opacity="0.32"/>
       <circle class="dial-sweep" r="36" fill="none" stroke="#00F0D0" stroke-width="2"
               stroke-dasharray="44 182" stroke-linecap="round" opacity="0.9"/>
       <text class="mono" x="0" y="6" text-anchor="middle" font-size="16"
             letter-spacing="1.5" fill="#00F0D0">{ }</text>
     </g>
 
-    <!-- ⑥ 文案 -->
+    <!-- ⑦ 文案 -->
     <text class="zh" x="64" y="152" font-size="38" font-weight="600" letter-spacing="1.2"
           fill="#E9F2F5">代码要经得起第二年</text>
-
-    <!-- 状态灯 + 身份行 -->
     <g transform="translate(69 179)">
       <circle class="dot-ring" r="4.5" fill="none" stroke="#00F0D0" stroke-width="1.2"/>
       <circle class="dot-core" r="3.4" fill="#00F0D0"/>
     </g>
-    <text class="zh" x="86" y="184" font-size="13.5" letter-spacing="0.6" fill="#6B7A83">yabingwang — 写后端，在意可读性</text>
+    <text class="zh" x="86" y="184" font-size="13.5" letter-spacing="0.6"
+          fill="#6B7A83">yabingwang — 程序员，在意可读性</text>
+    <rect class="cursor" x="312" y="172" width="2" height="13" fill="#00F0D0" opacity="0.85"/>
 
-    <!-- ⑦ 边缘小字 -->
+    <!-- ⑧ 右下角链接 -->
     <text class="mono" x="836" y="270" font-size="9.5" letter-spacing="1.4"
           fill="#6B7A83" opacity="0.45" text-anchor="end">github.com/yabingwang</text>
   </g>

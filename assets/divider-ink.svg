@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  分区动效分隔线 · 夜行墨黑
+  一根静止的细线 + 一层缓慢经过的柔光，加均匀刻度；循环但不像加载条
+  （没有起点终点、没有百分比、两端对称）。系统减弱动效时只剩静止的线。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 28" width="900" height="28"
+     role="img" aria-label="分区装饰线">
+  <title>分区装饰线</title>
+  <defs>
+    <linearGradient id="sweepG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00F0D0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00F0D0" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#00F0D0" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="900" height="28"/></clipPath>
+    <style>
+      .sweep { animation: run 7s linear infinite; }
+      @keyframes run { from { transform: translateX(0); } to { transform: translateX(1120px); } }
+      @media (prefers-reduced-motion: reduce) { .sweep { animation: none !important; } }
+    </style>
+  </defs>
+  <g clip-path="url(#c)">
+    <path d="M0 14 H900" stroke="#00F0D0" stroke-width="1" opacity="0.22"/>
+    <g><path d="M0 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M45 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M90 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M135 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M180 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M225 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M270 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M315 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M360 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M405 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M450 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M495 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M540 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M585 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M630 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M675 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M720 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M765 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M810 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M855 11 V17" stroke="{accent}" stroke-width="1" opacity="0.3"/><path d="M900 11 V19" stroke="{accent}" stroke-width="1" opacity="0.3"/></g>
+    <g class="sweep"><rect x="-220" y="13" width="220" height="2" fill="url(#sweepG)"/></g>
+  </g>
+</svg>

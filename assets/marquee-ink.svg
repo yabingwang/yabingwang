@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  关注方向横向流动条 · 夜行墨黑
+  纯 SVG 文本，双份循环（周期 896），28 秒走一轮；没有外部图片与脚本。
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 40" width="900" height="40"
+     role="img" aria-label="关注方向：边界、可读性、命名、状态、错误处理、简单、长期维护、分寸">
+  <title>关注方向</title>
+  <defs>
+    <clipPath id="c"><rect width="900" height="40"/></clipPath>
+    <style>
+      .zh { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif; }
+      .track { animation: run 28s linear infinite; }
+      @keyframes run { from { transform: translateX(0); } to { transform: translateX(-896px); } }
+      @media (prefers-reduced-motion: reduce) { .track { animation: none !important; } }
+    </style>
+  </defs>
+  <g clip-path="url(#c)">
+    <g class="track zh">
+      <path d="M0 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="14" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">边界</text>
+      <path d="M112 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="126" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">可读性</text>
+      <path d="M224 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="238" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">命名</text>
+      <path d="M336 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="350" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">状态</text>
+      <path d="M448 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="462" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">错误处理</text>
+      <path d="M560 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="574" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">简单</text>
+      <path d="M672 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="686" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">长期维护</text>
+      <path d="M784 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="798" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">分寸</text>
+      <path d="M896 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="910" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">边界</text>
+      <path d="M1008 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1022" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">可读性</text>
+      <path d="M1120 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1134" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">命名</text>
+      <path d="M1232 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1246" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">状态</text>
+      <path d="M1344 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1358" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">错误处理</text>
+      <path d="M1456 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1470" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">简单</text>
+      <path d="M1568 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1582" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">长期维护</text>
+      <path d="M1680 14 V26" stroke="{accent}" stroke-width="1" opacity="0.35"/>
+      <text x="1694" y="26" font-size="12.5" letter-spacing="1.6" fill="{accent}">分寸</text>
+    </g>
+  </g>
+</svg>
